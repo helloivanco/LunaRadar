@@ -1,8 +1,7 @@
 import { DataContext, networkChoices } from 'context/context';
 import Head from 'next/head';
 import { useState } from 'react';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 import 'tailwindcss/tailwind.css';
 function MyApp({ Component, pageProps }) {
   const [start, setStart] = useState(0);
@@ -22,11 +21,16 @@ function MyApp({ Component, pageProps }) {
         <title>Luna Radar - Terra Scanner</title>
         <meta
           name='description'
-          content="     Monitor what's happening on Terra to discover new opportunities
+          content="Monitor what's happening on Terra to discover new opportunities
                 and on-chain events. Start scanning!"
         />
         <meta property='og:title' content='Luna Radar - Terra Scanner' />
         <meta property='og:image' content='/cover.png' />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:image' content='/cover.png' />
+        <meta property='og:image:type' content='image/png' />
+        <meta property='og:image:width' content='2144' />
+        <meta property='og:image:height' content='1050' />
       </Head>
 
       <DataContext.Provider
@@ -41,7 +45,6 @@ function MyApp({ Component, pageProps }) {
           setCrawl,
         }}>
         <Component {...pageProps} />
-        <ToastContainer />
       </DataContext.Provider>
     </div>
   );

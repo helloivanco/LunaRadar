@@ -26,10 +26,6 @@ export default function Lcd() {
   };
 
   useEffect(() => {
-    getHeight();
-  }, [network]);
-
-  useEffect(() => {
     workerRef.current = new Worker(
       new URL('../utils/worker.js', import.meta.url)
     );
@@ -48,6 +44,8 @@ export default function Lcd() {
   }, []);
 
   const handleWork = useCallback(async () => {
+    await getHeight();
+
     workerRef.current.postMessage({
       start: startRef.current,
       network,

@@ -21,7 +21,7 @@ export default function Example() {
                 Start scanning!
               </p>
               <p className='mt-4 text-sm leading-6 text-indigo-300'>
-                100% Free. Made for the LUNA community.
+                Works best on desktop browsers.
               </p>
             </div>
           </div>
