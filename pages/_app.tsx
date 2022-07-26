@@ -18,10 +18,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Head>
-        <title>Luna Radar - Terra Scanner</title>
+        <title>Luna Radar - Terra Scanner Tool</title>
         <meta
           name='description'
-          content="Monitor what's happening on Terra to discover new opportunities
+          content="See what's happening on Terra to discover new opportunities
                 and on-chain events. Start scanning!"
         />
         <meta property='og:title' content='Luna Radar - Terra Scanner' />

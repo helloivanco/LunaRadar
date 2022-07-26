@@ -12,13 +12,13 @@ export default function Example() {
               </h2>
               <h3 className='text-1xl text-white sm:text-2xl mt-2'>
                 <span className='block'>
-                  <RiRadarFill className='inline' /> Terra Scanner
+                  <RiRadarFill className='inline' />
+                  Terra Scanning Tool
                 </span>
               </h3>
               <p className='mt-4 text-lg leading-6 text-indigo-200'>
-                Monitor real-time what's happening on Terra to discover new
-                opportunities and on-chain events. <br />
-                Start scanning!
+                See real-time what's happening on Terra to discover new
+                opportunities and on-chain events.
               </p>
               <p className='mt-4 text-sm leading-6 text-indigo-300'>
                 Works best on desktop browsers.
