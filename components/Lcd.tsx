@@ -15,11 +15,9 @@ export default function Lcd() {
 
   const terra = new LCDClient(network);
 
-  const [loading, setLoading] = useState(false);
   const [currentBlock, setCurrentBlock] = useState(start);
   const workerRef = useRef(null);
   const startRef = useRef(start);
-  const [resumeWork, setResumeWork] = useState(false);
 
   const getHeight = async () => {
     const bi = await terra.tendermint.blockInfo();
@@ -133,9 +131,9 @@ export default function Lcd() {
               setCrawl(true);
               handleWork();
             }}
-            className='mt-4 hover:bg-blue-400 cursor-pointer w-full text-center bg-blue-600 p-2 text-white font-bold rounded-full'>
+            className='mt-4 hover:bg-blue-700 transition duration-500 cursor-pointer w-full text-center bg-blue-600 p-2 text-white font-bold rounded-full'>
             <div className='flex items-center justify-center'>
-              <RiRadarFill className='mr-2' /> Scan from Block {start}
+              <RiRadarFill className='mr-2' /> Scan {network.chain}
             </div>
           </div>{' '}
         </div>

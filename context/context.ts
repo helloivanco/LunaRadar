@@ -5,11 +5,13 @@ export const networkChoices = [
     URL: 'https://pisco-lcd.terra.dev',
     chainID: 'pisco-1',
     title: 'pisco-1 testnet',
+    chain: 'Testnet',
   },
   {
     URL: 'https://phoenix-lcd.terra.dev',
     chainID: 'phoenix-1',
     title: 'phoenix-1 mainnet',
+    chain: 'Mainnet',
   },
 ];
 

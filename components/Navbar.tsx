@@ -43,7 +43,7 @@ export default function Navbar() {
                   setData([]);
                   toggleNetwork();
                 }}
-                className='border px-2 py-0.5 border-blue-500 rounded-full text-blue-500 text-sm font-semibold cursor-pointer hover:text-blue-600 flex items-center'>
+                className='transition duration-500 border px-2 py-0.5 border-blue-500 rounded-full text-blue-500 text-sm font-semibold cursor-pointer hover:text-blue-600 flex items-center'>
                 <CgArrowsExchangeAlt className='text-2xl mr-1' />{' '}
                 {network.title}
               </div>

@@ -16,8 +16,8 @@ export default function Example() {
                 </span>
               </h3>
               <p className='mt-4 text-lg leading-6 text-indigo-200'>
-                Monitor what's happening on Terra to discover new opportunities
-                and on-chain events. <br />
+                Monitor real-time what's happening on Terra to discover new
+                opportunities and on-chain events. <br />
                 Start scanning!
               </p>
               <p className='mt-4 text-sm leading-6 text-indigo-300'>
