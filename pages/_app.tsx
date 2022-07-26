@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Head>
-        <title>Luna Radar - Terra Scanner Tool</title>
+        <title>Luna Radar - Terra Scan Tool</title>
         <meta
           name='description'
           content="See what's happening on Terra to discover new opportunities

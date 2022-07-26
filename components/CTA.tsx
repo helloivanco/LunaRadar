@@ -13,7 +13,7 @@ export default function Example() {
               <h3 className='text-1xl text-white sm:text-2xl mt-2'>
                 <span className='block'>
                   <RiRadarFill className='inline' />
-                  Terra Scanning Tool
+                  Terra Scan Tool
                 </span>
               </h3>
               <p className='mt-4 text-lg leading-6 text-indigo-200'>
