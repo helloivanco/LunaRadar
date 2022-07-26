@@ -1,10 +1,4 @@
-import {
-  CrawlContext,
-  DataContext,
-  networkChoices,
-  NetworkContext,
-  StartContext,
-} from 'context/context';
+import { DataContext, networkChoices } from 'context/context';
 import Head from 'next/head';
 import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
@@ -25,18 +19,30 @@ function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Head>
-        <title>Terra Scanner</title>
+        <title>Luna Radar - Terra Scanner</title>
+        <meta
+          name='description'
+          content="     Monitor what's happening on Terra to discover new opportunities
+                and on-chain events. Start scanning!"
+        />
+        <meta property='og:title' content='Luna Radar - Terra Scanner' />
+        <meta property='og:image' content='/cover.png' />
       </Head>
-      <NetworkContext.Provider value={{ network, toggleNetwork }}>
-        <StartContext.Provider value={{ start, setStart }}>
-          <DataContext.Provider value={{ data, setData }}>
-            <CrawlContext.Provider value={{ crawl, setCrawl }}>
-              <Component {...pageProps} />
-              <ToastContainer />
-            </CrawlContext.Provider>
-          </DataContext.Provider>
-        </StartContext.Provider>
-      </NetworkContext.Provider>
+
+      <DataContext.Provider
+        value={{
+          network,
+          toggleNetwork,
+          data,
+          setData,
+          start,
+          setStart,
+          crawl,
+          setCrawl,
+        }}>
+        <Component {...pageProps} />
+        <ToastContainer />
+      </DataContext.Provider>
     </div>
   );
 }

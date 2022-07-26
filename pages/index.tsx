@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className='py-6 bg-gray-50 flex flex-col items-center justify-start min-h-screen'>
+      <div className='bg-gray-50 flex flex-col items-center justify-start min-h-screen'>
         <Lcd />
       </div>
     </>

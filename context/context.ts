@@ -1,7 +1,4 @@
 import { createContext } from 'react';
-export const StartContext = createContext({ start: 0, setStart: null });
-export const DataContext = createContext({ data: [], setData: null });
-export const CrawlContext = createContext({ crawl: false, setCrawl: null });
 
 export const networkChoices = [
   {
@@ -16,7 +13,13 @@ export const networkChoices = [
   },
 ];
 
-export const NetworkContext = createContext({
+export const DataContext = createContext({
+  data: [],
+  setData: null,
+  start: 0,
+  setStart: null,
+  crawl: false,
+  setCrawl: null,
   network: networkChoices[1],
   toggleNetwork: null,
 });

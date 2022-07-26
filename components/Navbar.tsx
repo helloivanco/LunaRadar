@@ -1,17 +1,11 @@
-import {
-  CrawlContext,
-  DataContext,
-  NetworkContext,
-  StartContext,
-} from 'context/context';
+import clsx from 'clsx';
+import { DataContext } from 'context/context';
 import { useContext, useState } from 'react';
 import { CgArrowsExchangeAlt } from 'react-icons/cg';
 
 export default function Navbar() {
-  const { setStart } = useContext(StartContext);
-  const { setData } = useContext(DataContext);
-  const { setCrawl } = useContext(CrawlContext);
-  const { network, toggleNetwork } = useContext(NetworkContext);
+  const { setStart, network, toggleNetwork, setData, setCrawl, crawl } =
+    useContext(DataContext);
 
   const [startquery, setStartQuery] = useState('');
 
@@ -23,31 +17,40 @@ export default function Navbar() {
   };
 
   return (
-    <nav className='sticky top-0 border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-900 opacity-90'>
-      <div className='container flex flex-wrap justify-between items-center mx-auto'>
-        <div className='flex items-center'>
-          <a href='/' className='flex items-center'>
-            <img src='/logo.svg' className='mr-3 h-6 sm:h-9' alt='Logo' />
-            <span className='hidden sm:block self-center text-xl font-semibold whitespace-nowrap dark:text-white'>
-              Terra Scanner
-            </span>
-            <span className='sm:hidden block self-center text-xl font-semibold whitespace-nowrap dark:text-white'>
-              TS
-            </span>
-          </a>
-
-          <div
-            onClick={() => {
-              setData([]);
-              toggleNetwork();
-            }}
-            className='text-blue-400 ml-2 text-sm cursor-pointer hover:text-blue-600 flex items-center'>
-            {network.title}
-            <CgArrowsExchangeAlt />
+    <>
+      <nav className='sticky top-0 border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-900 opacity-95'>
+        <div className='container flex flex-wrap justify-between items-center mx-auto'>
+          <div className='flex items-center'>
+            <a href='/' className='flex items-center'>
+              <img
+                src='/logo.png'
+                className={clsx('mr-3 h-6 sm:h-9', crawl && 'animate-spin')}
+                alt='Logo'
+              />
+              <span className='hidden sm:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
+                Luna Radar
+              </span>
+              <span className='sm:hidden block self-center text-xl font-semibold whitespace-nowrap dark:text-white'>
+                Luna Radar
+              </span>
+            </a>
           </div>
-        </div>
 
-        <div className='md:order-2'>
+          <div className='md:order-2'>
+            <div className='relative block'>
+              <div
+                onClick={() => {
+                  setData([]);
+                  toggleNetwork();
+                }}
+                className='border px-2 py-0.5 border-blue-500 rounded-full text-blue-500 text-sm font-semibold cursor-pointer hover:text-blue-600 flex items-center'>
+                <CgArrowsExchangeAlt className='text-2xl mr-1' />{' '}
+                {network.title}
+              </div>
+            </div>
+          </div>
+
+          {/* <div className='md:order-2'>
           <div className='relative block'>
             <div className='flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none'>
               <svg
@@ -75,8 +78,12 @@ export default function Navbar() {
               />
             </form>
           </div>
+        </div> */}
         </div>
-      </div>
-    </nav>
+      </nav>
+      {crawl && (
+        <div className='sticky top-12 sm:top-14 h-1 w-full bg-gradient-to-r from-blue-500 to-blue-600 animate-pulse'></div>
+      )}
+    </>
   );
 }
