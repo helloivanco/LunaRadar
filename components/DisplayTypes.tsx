@@ -4,9 +4,10 @@ export default function DisplayTypes({ data }) {
 
   data.forEach((item) => {
     item.forEach((item) => {
-      const type = JSON.stringify(JSON.parse(item.tx.body.messages[0])['@type'])
-        .replace('"', '')
-        .replace('"', '');
+      const type = JSON.stringify(
+        JSON.parse(item.tx.body.messages[0])['@type']
+      ).replace(/"/gi, '');
+
       const found = array.find((i) => i.type === type);
 
       if (found) {

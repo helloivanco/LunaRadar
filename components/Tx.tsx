@@ -30,12 +30,12 @@ export default function Tx({ data }) {
             className='mt-2 rounded-lg shadow-md p-2 m-4 bg-white'>
             <span className='text-xs break-words'>
               <TypeToEmoji type={type} />
-
-              <div className='mt-3 text-gray-600'>
-                {JSON.stringify(JSON.parse(i.tx.body.messages[0])).slice(
-                  0,
-                  500
-                )}
+              <div className='-mt-3 text-gray-600 truncate'>
+                <pre>
+                  {JSON.stringify(JSON.parse(i.tx.body.messages[0]), null, '\t')
+                    .slice(0, 500)
+                    .replace(/[{}"@/,]/gi, '')}
+                </pre>
               </div>
             </span>
             <div className='mt-2 font-bold text-gray-600 text-sm'>

@@ -60,14 +60,19 @@ export default function Lcd() {
     });
   }, [network]);
 
-  const [time, setTime] = useState(0);
+  const [time, setTime] = useState(Date.now());
+  const [startTime, setStartTime] = useState(null);
 
   useEffect(() => {
     let interval;
 
     if (crawl) {
+      if (!startTime) {
+        setStartTime(Date.now());
+      }
+
       interval = setInterval(() => {
-        setTime((prevTime) => prevTime + 1000);
+        setTime(Date.now());
       }, 1000);
     }
 
@@ -87,6 +92,10 @@ export default function Lcd() {
     return i;
   };
 
+  const timeElapsed = Math.round((time - startTime) / 1000);
+  const blocksScanned = currentBlock - startRef.current;
+  const transactions = arrayLength(data);
+
   return (
     <div className='max-w-5xl w-full mx-auto'>
       {!crawl && <CTA />}
@@ -97,23 +106,22 @@ export default function Lcd() {
               { name: 'Current Block', stat: currentBlock },
               {
                 name: 'Blocks Scanned',
-                stat: currentBlock - startRef.current,
+                stat: blocksScanned,
               },
-              { name: 'Seconds Elapsed', stat: time / 1000 },
 
-              { name: 'Txs', stat: arrayLength(data) },
-              {
-                name: 'Tx / Block',
-                stat: (
-                  arrayLength(data) /
-                  (currentBlock - startRef.current)
-                ).toFixed(2),
-              },
               {
                 name: 'Seconds / Block',
-                stat: (time / 1000 / (currentBlock - startRef.current)).toFixed(
-                  2
-                ),
+                stat: (timeElapsed / blocksScanned).toFixed(2),
+              },
+              { name: 'Txs', stat: transactions },
+              {
+                name: 'Tx / Block',
+                stat: (arrayLength(data) / blocksScanned).toFixed(2),
+              },
+
+              {
+                name: 'Tx / Second',
+                stat: (transactions / timeElapsed).toFixed(4),
               },
             ]}
           />

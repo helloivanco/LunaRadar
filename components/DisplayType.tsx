@@ -10,7 +10,7 @@ export default function DisplayType({ item }) {
     <div
       onClick={() => dispatchFilter({ type: 'update', payload: item.type })}
       className={clsx(
-        stateFilter.filter.includes(item.type) && 'border-blue-500',
+        stateFilter.filter.includes(item.type) && 'border-blue-500 bg-slate-50',
         'px-4 py-5 transition duration-500 bg-white border hover:border-blue-500 cursor-pointer shadow rounded-lg overflow-hidden sm:p-6'
       )}>
       <dt className='text-xs font-medium text-gray-900'>
