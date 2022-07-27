@@ -10,8 +10,16 @@ import Tx from './Tx';
 const { LCDClient } = require('@terra-money/terra.js');
 
 export default function Lcd() {
-  const { data, setData, start, setStart, network, crawl, setCrawl } =
-    useContext(DataContext);
+  const {
+    data,
+    setData,
+    start,
+    setStart,
+    network,
+    crawl,
+    setCrawl,
+    stateFilter,
+  } = useContext(DataContext);
 
   const terra = new LCDClient(network);
 
@@ -115,11 +123,19 @@ export default function Lcd() {
       )}
 
       {data.map((item, idx) => {
-        return (
-          <motion.div layout key={idx}>
-            <Tx data={item} />
-          </motion.div>
-        );
+        if (stateFilter.filter.length == 0) {
+          return (
+            <motion.div layout key={idx}>
+              <Tx data={item} />
+            </motion.div>
+          );
+        } else {
+          return (
+            <div key={idx}>
+              <Tx data={item} />
+            </div>
+          );
+        }
       })}
 
       {!crawl && (
