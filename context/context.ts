@@ -24,4 +24,6 @@ export const DataContext = createContext({
   setCrawl: null,
   network: networkChoices[1],
   toggleNetwork: null,
+  stateFilter: null,
+  dispatchFilter: null,
 });

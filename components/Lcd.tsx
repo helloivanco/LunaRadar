@@ -87,11 +87,12 @@ export default function Lcd() {
           <Stats
             stats={[
               { name: 'Current Block', stat: currentBlock },
-              { name: 'Seconds Elapsed', stat: time / 1000 },
               {
                 name: 'Blocks Scanned',
                 stat: currentBlock - startRef.current,
               },
+              { name: 'Seconds Elapsed', stat: time / 1000 },
+
               { name: 'Txs', stat: arrayLength(data) },
               {
                 name: 'Tx / Block',

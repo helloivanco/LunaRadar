@@ -1,13 +1,40 @@
 import { DataContext, networkChoices } from 'context/context';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
+import 'styles/styles.css';
 
-import 'tailwindcss/tailwind.css';
+type InitialState = {
+  filter: string[] | null;
+};
+
+type Action = {
+  type: 'update';
+  payload: string;
+};
+
+const reducer = (state: InitialState, action: Action): InitialState => {
+  switch (action.type) {
+    case 'update':
+      if (state.filter.includes(action.payload)) {
+        return {
+          filter: [...state.filter.filter((i) => i !== action.payload)],
+        };
+      } else {
+        return { filter: [...state.filter, action.payload] };
+      }
+    default:
+      throw new Error();
+  }
+};
+
 function MyApp({ Component, pageProps }) {
   const [start, setStart] = useState(0);
   const [data, setData] = useState([]);
   const [crawl, setCrawl] = useState(false);
   const [network, setNetwork] = useState(networkChoices[1]);
+
+  const initialState: InitialState = { filter: [] };
+  const [stateFilter, dispatchFilter] = useReducer(reducer, initialState);
 
   const toggleNetwork = () => {
     setNetwork(
@@ -43,6 +70,8 @@ function MyApp({ Component, pageProps }) {
           setStart,
           crawl,
           setCrawl,
+          stateFilter,
+          dispatchFilter,
         }}>
         <Component {...pageProps} />
       </DataContext.Provider>

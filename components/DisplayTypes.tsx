@@ -1,4 +1,4 @@
-import TypeToEmoji from './TypeToEmoji';
+import DisplayType from './DisplayType';
 export default function DisplayTypes({ data }) {
   let array = [];
 
@@ -27,16 +27,7 @@ export default function DisplayTypes({ data }) {
     <div className='p-4'>
       <dl className='grid grid-cols-3 gap-3 sm:grid-cols-4'>
         {array.map((item) => (
-          <div
-            key={item.type}
-            className='px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6'>
-            <dt className='text-xs font-medium text-gray-900'>
-              <TypeToEmoji type={item.type} />
-            </dt>
-            <dd className='mt-1 text-3xl font-semibold text-blue-500'>
-              {item.count}
-            </dd>
-          </div>
+          <DisplayType item={item} key={item.type} />
         ))}
       </dl>
     </div>
