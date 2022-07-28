@@ -1,7 +1,8 @@
+import { RiRadarFill } from '@react-icons/all-files/ri/RiRadarFill';
+import { RiRefreshLine } from '@react-icons/all-files/ri/RiRefreshLine';
 import { DataContext } from 'context/context';
 import { motion } from 'framer-motion';
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import { RiRadarFill, RiRefreshLine } from 'react-icons/ri';
 import CTA from './CTA';
 import DisplayTypes from './DisplayTypes';
 import Stats from './Stats';

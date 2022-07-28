@@ -1,4 +1,4 @@
-import { RiRadarFill } from 'react-icons/ri';
+import { RiRadarFill } from '@react-icons/all-files/ri/RiRadarFill';
 
 export default function Example() {
   return (
