@@ -1,7 +1,7 @@
+import { CgArrowsExchangeAlt } from '@react-icons/all-files/cg/CgArrowsExchangeAlt';
 import clsx from 'clsx';
 import { DataContext } from 'context/context';
 import { useContext, useState } from 'react';
-import { CgArrowsExchangeAlt } from 'react-icons/cg';
 
 export default function Navbar() {
   const { setStart, network, toggleNetwork, setData, setCrawl, crawl } =
