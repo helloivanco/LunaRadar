@@ -109,4 +109,21 @@ export const types = [
     details:
       'A validator can edit its delegate information, such as moniker, website, commission rate, etc.',
   },
+  {
+    type: '/ibc.core.connection.v1.MsgConnectionOpenConfirm',
+    emoji: '🌐 Confirm IBC Connection',
+    details:
+      'MsgConnectionOpenConfirm defines a msg sent by a Relayer to Chain B to acknowledge the change of connection state to OPEN on Chain A.',
+  },
+  {
+    type: '/ibc.core.client.v1.MsgCreateClient',
+    emoji: '🌐 Create IBC Client',
+    details: 'MsgCreateClient defines a message to create an IBC client',
+  },
+  {
+    type: '/ibc.core.connection.v1.MsgConnectionOpenTry',
+    emoji: '🌐 Open IBC Connection',
+    details:
+      'MsgConnectionOpenTry defines a msg sent by a Relayer to try to open a connection on Chain B.',
+  },
 ];
