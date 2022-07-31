@@ -1,3 +1,4 @@
+import { AiFillGithub } from '@react-icons/all-files/ai/AiFillGithub';
 import { CgArrowsExchangeAlt } from '@react-icons/all-files/cg/CgArrowsExchangeAlt';
 import clsx from 'clsx';
 import { DataContext } from 'context/context';
@@ -37,7 +38,7 @@ export default function Navbar() {
           </div>
 
           <div className='md:order-2'>
-            <div className='relative block'>
+            <div className='relative flex items-center'>
               <div
                 onClick={() => {
                   setData([]);
@@ -46,6 +47,13 @@ export default function Navbar() {
                 className='transition duration-500 border px-2 py-0.5 border-blue-500 rounded-full text-blue-500 text-sm font-semibold cursor-pointer hover:text-blue-600 flex items-center'>
                 <CgArrowsExchangeAlt className='text-2xl mr-1' />{' '}
                 {network.title}
+              </div>
+              <div
+                onClick={() => {
+                  window.open('https://github.com/hellopaidco/LunaRadar');
+                }}
+                className='ml-2 text-3xl text-blue-500 cursor-pointer hover:text-blue-700 transition duration-500'>
+                <AiFillGithub />
               </div>
             </div>
           </div>

@@ -1,8 +1,8 @@
 ## LunaRadar.com
 
-LunaRadar currently polls new blocks client-side via a web worker. New transactions are displayed but not saved or cached. Lunaradar.com will continue running as long as the Terra 2 ecosystem is beating. Welcome any pull-requests to add to this free resource for the community.
+LunaRadar currently polls new blocks client-side via a web worker. New transactions are displayed and not saved. Lunaradar will continue running as long as the Terra 2 ecosystem is beating. Welcome pull-requests to improve this free resource for the community.
 
-## Getting Started NextJS + TailwindCSS
+## NextJS + TailwindCSS
 
 First, run the development server:
 
