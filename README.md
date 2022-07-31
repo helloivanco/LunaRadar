@@ -1,6 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## LunaRadar.com
 
-## Getting Started
+LunaRadar currently polls new blocks client-side via a web worker. New transactions are displayed but not saved or cached. Lunaradar.com will continue running as long as the Terra 2 ecosystem is beating. Welcome any pull-requests to add to this free resource for the community.
+
+## Getting Started NextJS + TailwindCSS
 
 First, run the development server:
 
