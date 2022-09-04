@@ -17,13 +17,13 @@ export const networkChoices = [
 
 export const DataContext = createContext({
   data: [],
-  setData: null,
-  start: 0,
-  setStart: null,
-  crawl: false,
-  setCrawl: null,
+  setData: true,
+  start: true,
+  setStart: 1,
+  crawl: true,
+  setCrawl: 1,
   network: networkChoices[1],
-  toggleNetwork: null,
+  toggleNetwork: true,
   stateFilter: null,
   dispatchFilter: null,
 });
