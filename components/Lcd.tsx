@@ -99,7 +99,17 @@ export default function Lcd() {
 
   return (
     <div className='max-w-5xl w-full mx-auto'>
-      {!crawl && <CTA />}
+      {!crawl && (
+        <div
+          className='cursor-pointer'
+          onClick={() => {
+            setStart(start);
+            setCrawl(true);
+            handleWork();
+          }}>
+          <CTA />
+        </div>
+      )}
       {crawl && (
         <>
           <Stats
@@ -159,7 +169,7 @@ export default function Lcd() {
             <div className='flex items-center justify-center'>
               <RiRadarFill className='mr-2' /> Scan {network.chain}
             </div>
-          </div>{' '}
+          </div>
         </div>
       )}
 
